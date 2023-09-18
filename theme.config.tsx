@@ -2,7 +2,7 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span><img src="https://radical.sh/radical-logo-image.png" height="42" width="42" />Radical</span>,
+  logo: <span><img style={{display:'inline',marginRight:12}} src="https://radical.sh/radical-logo-image.png" height="42" width="42" />Radical</span>,
   project: {
     link: 'https://github.com/shuding/nextra-docs-template',
   },
