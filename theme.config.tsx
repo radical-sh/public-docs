@@ -9,7 +9,7 @@ const config: DocsThemeConfig = {
   // chat: {
   //   link: 'https://discord.com',
   // },
-  docsRepositoryBase: 'https://github.com/radical-sh/public-docs',
+  docsRepositoryBase: 'https://github.com/radical-sh/public-docs/blob/main',
   footer: {
     text: 'Radical',
   },
