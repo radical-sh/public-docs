@@ -6,7 +6,7 @@ const config: DocsThemeConfig = {
   logoLink: "https://radical.sh",
   feedback:{
     labels: "documentation",
-    link: ()=> "https://github.com/radical-sh/public-docs/discussions"
+    useLink: ()=> "https://github.com/radical-sh/public-docs/discussions"
   }
   // project: {
   //   link: 'https://radical.sh',
