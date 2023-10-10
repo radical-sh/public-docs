@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
   feedback:{
     labels: "documentation",
     useLink: ()=> "https://github.com/radical-sh/public-docs/discussions"
-  }
+  },
   // project: {
   //   link: 'https://radical.sh',
   // },
