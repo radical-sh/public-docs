@@ -1,0 +1,59 @@
+# Custom API
+
+Radical.generates standard API's of CRUD as soon as the api is enabled. But few custom API's might be required to introduce custom end points. 
+
+Custom API's can be built with following options
+1. Go to API tab
+2. Click on Add in the sidebar
+3. Select the schema for which custom API has to be added
+4. Enter the name of API
+5. Choose the newly selected API in sidebar
+
+
+## Visiblity and auth
+To control these options, check [modify advanced options](./advanced)
+
+## Request and Response options
+
+### Request Options
+In the request side, you can control verb and path of the custom api. 
+
+**Verb** - To contorl whether request is GET / POST / PUT / DELETE
+
+**Path** - This will be path of the custom api. 
+
+Example `/actions/returns`
+
+**Query Parameters** - If any custom query parameters to be added for example `country`
+
+Example `/actions/returns?country=XX`
+
+**Headers** - If any custom header to be consumed in API
+
+### Response Options
+
+Status - Choose between 200 / 201 / 202 
+
+Redirection Url - If 201 / 202 is specified the redirection action has to be selected to a get action on existing resource
+
+### Custom API Type
+
+**Type** - Schema of the custom API, this can be different compared to base schema where custom API is added.
+
+
+## Example
+Create registrations in vechicles
+
+```/vechicles/{vehicleId}/registrations```
+
+1. Vehicle Schema to be created
+2. Enable CRUD for vehicles
+3. Reigstration Schema to be created
+4. Create custom api in vehicles for create registrations
+5. Select type as Registration
+6. For PUT and POST verb, fields to be exposed can be selected
+7. Add query parameters, authorization (optional)
+8. Choose the response status
+
+This custom api will add controller and service layer based on visiblity selection.
+

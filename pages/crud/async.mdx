@@ -1,0 +1,14 @@
+# Sync Vs Async
+
+By default, Radical.sh generates synchronous APIs, where operations are executed directly on the database. However, users have the flexibility to modify this behavior to enable asynchronous APIs.
+
+To enable asynchronous behavior, follow these steps:
+
+1. Add a model.
+2. Enable the API for the model.
+3. Choose one of the mutation operations: Create, Update, or Delete.
+4. Opt for asynchronous behavior.
+
+Asynchronous functionality is established using Spring Cloud Stream with Kafka as the default binder. While it's possible to adapt this to a different messaging system, it's important to note that radical.sh primarily supports Kafka.
+
+Asynchronous operations generate an event that is subsequently consumed by the same service to execute the associated operation. Users have the flexibility to customize the event name to match the API's operation being executed.

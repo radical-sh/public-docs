@@ -1,0 +1,16 @@
+# Inbound Event
+
+What is an inbound event ?
+
+If a microservice wants to receive / consumed event from another service, inbound event can be used to consume data. 
+
+Steps to create an inbound event.
+
+1. Go to events tab
+2. Click on add and select inbound event category, enter a name and confirm on plus button
+3. Choose the channel, more explanation on [channels](./channels)
+4. Choose the schema of inbound event
+5. If a channel contains multiple event types, further filtering is required to process the necessary events
+6. Choose the action on the api, this action will be performed upon consuming the event.
+
+Note : API is a pre-requisite for event consumption, you can check how to enable inbound event. You can make the API as invisible if you do not want it to be exposed as public.
