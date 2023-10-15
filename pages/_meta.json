@@ -1,4 +1,4 @@
-{
+{ 
   "index": "What is Radical.sh ?",
   "start": "Getting Started",
   "crud": "API",
@@ -8,5 +8,5 @@
   "authentication": "Authentication",
   "settings": "Settings",
   "advanced":"Advanced",
-  "casestudies": "Case Studies"
+  "ecommerce": "E-Commerce - Realistic Example"
 }
