@@ -11,6 +11,37 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 1,
     toggleButton: true
   },
+  useNextSeoProps() {
+    const { asPath } = useRouter()
+    if (asPath !== '/') {
+      return {
+        titleTemplate: '%s – Radical.sh'
+      }
+    }
+  },
+  head: (
+    <>
+      <meta charSet="utf-8"/>
+      <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <meta name="generator" content="Gatsby 4.25.6"/>
+      <meta data-react-helmet="true" charSet="utf-8"/>
+      <meta data-react-helmet="true" name="description" content="No code builder that generates code"/>
+      <meta data-react-helmet="true" name="og:image" content="https://radical.sh/static/badf7c5c0ccc35b44c8f4030040fe6e1/22803/radical-logo.png"/>
+      <meta data-react-helmet="true" name="og:image:width" content="1200"/>
+      <meta data-react-helmet="true" name="og:image:height" content="1200"/>
+      <meta data-react-helmet="true" name="og:type" content="website"/>
+      <meta data-react-helmet="true" name="og:title" content="Radical.sh"/>
+      <meta data-react-helmet="true" name="og:description" content="No code builder that generates code"/>
+      <meta data-react-helmet="true" name="og:site_name" content="Radical.sh - API Builder"/>
+      <meta data-react-helmet="true" name="og:url" content="https://www.radical.sh/"/>
+      <meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/>
+      <meta data-react-helmet="true" name="twitter:description" content="No code builder that generates code"/>
+      <meta data-react-helmet="true" name="twitter:title" content="Radical.sh"/>
+      <meta data-react-helmet="true" name="twitter:image" content="https://radical.sh/static/badf7c5c0ccc35b44c8f4030040fe6e1/22803/radical-logo.png"/>
+      <meta data-react-helmet="true" name="twitter:creator" content="@senthil_ss"/>
+    </>
+  ),
   darkMode: false,
   search: {
     component: () => {
