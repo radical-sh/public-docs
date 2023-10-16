@@ -4,8 +4,7 @@
   "crud": "API",
   "events": "Events",
   "integrations": "Integrations",
-  "modeling": "Modeling",
-  "authentication": "Authentication",
+  "modeling": "Modeling",  
   "settings": "Settings",
   "advanced":"Advanced",
   "ecommerce": "E-Commerce - Realistic Example"
