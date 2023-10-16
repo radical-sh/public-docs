@@ -11,6 +11,9 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 1,
     toggleButton: true
   },
+  nextThemes:{
+    defaultTheme:'light'
+  },
   darkMode: false,
   search: {
     component: () => {
