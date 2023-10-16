@@ -1,5 +1,11 @@
-{
-  "index": "Introduction",
-  "another": "Getting Started",
-  "advanced": "Run generated code"
+{ 
+  "index": "What is Radical.sh ?",
+  "start": "Getting Started",
+  "crud": "API",
+  "events": "Events",
+  "integrations": "Integrations",
+  "modeling": "Modeling",  
+  "settings": "Settings",
+  "advanced":"Advanced",
+  "ecommerce": "E-Commerce - Realistic Example"
 }

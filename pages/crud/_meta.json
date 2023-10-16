@@ -1,0 +1,7 @@
+{
+    "crud": "CRUD",
+    "select": "Select All",
+    "async": "Sync Vs Async",        
+    "advanced": "Advanced",
+    "custom": "Custom API"
+}

@@ -1,0 +1,27 @@
+# API
+
+Radical supports folowing API options
+
+### Base Path
+
+Base path can support several uses cases including versioning or a base path that is used common in several micro-servies. Base url also supports [path variables](../advanced/path_variables)
+
+### Health 
+
+API end point to report health for monitoring in 
+
+`http://<hostname>:8080/health`
+
+### Dependencies Health 
+
+Provides health metrics of dependent components in 
+
+`http://<hostname>:8081/actuator`
+
+### Open API 
+
+Open API documentation is avialable out of the box for a spring boot app, it can be turned on / off via this settings.
+
+Swagger 3 / Open API is available in 
+
+`http://localhost:8080/swagger-ui/index.html`

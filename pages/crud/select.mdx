@@ -1,0 +1,51 @@
+# Select All 
+
+The 'Select All' query capability is available in the API and is supported in both MongoDB and RDBMS. This feature is implemented using the Java Query DSL library, and 'Select All' inherently supports limit-based pagination by default
+
+
+| Query Params        | Description | 
+| :------------ | :--------- |
+| filters        | Ability to filter records with conditional operators    | 
+| sort     | Sort the records based on field in ascending or descending order     |
+| limit |   Pagination per page limit          |  
+| offset |  Pagination start paramter           |  
+
+Note : All filters are combined with AND operator
+ 
+## Filter operations 
+
+Select all is supported with a bunch of operators
+
+| Filter Operator       | Description | 
+| :------------ | :--------- |
+| eq        | Equal To    | 
+| gt     | Greater Than   |
+| gte |   Greater Than Equal To         |  
+| lt |  Less Than           |  
+| lte |  Less Than Equal To          |  
+
+
+## Sort Operations
+
+| Sort Operator       | Description | 
+| :------------ | :--------- |
+| -sortByField        | DESCENDING  | 
+| +sortByField     | ASECNEDING   |
+| sortByField     | ASECNEDING   |
+
+## Examples 
+
+Filters
+```
+http://<you-api-base-path>/students?filters=age:gt:10;type:eq:day_scholar
+```
+
+Sort By - Filter and sorts by age
+```
+http://<you-api-base-path>/students?filters=age:gt:10;type:eq:day_scholar&sort=age
+```
+
+Pagination - Lists students from 10 - 20 
+```
+http://<you-api-base-path>/students?filters=age:gt:10;type:eq:day_scholar&sort=age&limit=10&offset=10
+```

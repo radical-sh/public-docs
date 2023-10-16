@@ -1,0 +1,143 @@
+## Ecommerce
+
+import Flow from "../components/flow";
+import { Bleed } from "nextra-theme-docs";
+import Image from 'next/image'
+import deliveryMan from '../images/delivery-man.png'
+
+### Requirements
+
+Design a order management system where users can place order and chef's can confirm the order completion, and delivery representative picksup order and delivers to customer's location.
+
+<div className="visual-req" >
+    <div>🧑🏼‍💼 <span className="req-arrow">→</span> 🍛</div>
+    <div >👨🏼‍🍳 <span className="req-arrow">→</span> 🍲</div>
+    <div ><Image src={deliveryMan} className="delivery-man-img" alt="Delivery Man" width={60} height={60} /><span className="delivery-arrow">→</span> <span> 🍛</span></div>
+</div>
+
+### Design
+
+<div id="design">
+  <Flow />
+</div>
+
+### Order Service
+
+Create a new project with name as `Order Service`
+
+
+
+1. Add a schema for order and make orderId as key, use import option in schema page and use the json provided here and enter `Order` as root object name
+<details>
+  <summary>Order Schema</summary>
+
+
+```json
+
+{
+    "orderId": "4265b3e3-4c1e-4f2e-9d32-7d66bb87b9c7",
+    "customerId": "76ffd945-e658-4450-9952-6553437507fe",
+    "restaurantId":"b15eaf54-5a9c-4b0b-b180-bb0f947cdcf7",
+    "customer":{
+        "customerId": "8898871c-7ef1-4e19-a07a-5322615f267e",
+        "contactNumber": "xxxx"
+    },
+    "orderlines":[
+        {
+            "quantity": 2,
+            "productId": "8a0ff617-83a2-4a90-8ce7-551070dceb10",
+            "instructions" : "reduce salt"
+        }
+    ],    
+}
+
+
+```
+
+</details>
+2. Add auditor fields from schema designer page
+3. Enable API for order and have the API's as async
+    - Convert create into async action and rename the event as OrderAccepted
+    - Convert update into async action
+    - Convert delete into async action and rename the event as OrderCancelled
+4. Add authentication as JWT per project requirement 
+
+Assumption - Apps / Web App have SSO enabled that can provide JWT token
+
+This enables all API's and all events on Order - No additional manual coding for this requirement.
+
+Order API can be used to take order from customer and updates can be used to update the order cooking completion from chef
+
+### Delivery Service
+
+Create a new project with name as `Delivery Service`
+
+1. Add a schema for delivery with deliveryId as key and add auditor fields after schema import
+<details>
+  <summary>Delivery Schema</summary>
+
+
+```json
+
+{
+    "orderId": "4265b3e3-4c1e-4f2e-9d32-7d66bb87b9c7",
+    "deliveryId": "76ffd945-e658-4450-9952-6553437507fe",
+    "status":"CREATED",       
+    "assistantId":"8affd945-5658-2450-2992-0553432307fe",
+    "customer":{
+        "customerId": "8898871c-7ef1-4e19-a07a-5322615f267e",
+        "contactNumber": "xxxx"
+    },
+}
+
+
+```
+
+</details>
+2. Enable API for delivery and have API's as async
+3. Disable API for create and the delivery can be created by listened order completion message
+4. Add an inbound event which listen to the topic of order service
+5. Inbound event should point to the action of create delivery
+6. Manual coding is required from event consumer to service invocation that creates delivery
+
+### Notification Service
+
+Create a new project with name as `Notification Service`
+
+1. Add a schema for notification via import schema option with notificationId as key
+<details>
+  <summary>Notification Schema</summary>
+
+
+```json
+
+{
+    "notificationId": "726c081e-a487-464e-99de-4364700ef686",
+    "message": "Your order {orderId} will be delivered soon by our delivery assistant"
+}
+
+
+```
+
+</details>
+
+2. Notification needs to have key fields like notification content, and notification type as SMS or Email
+3. Enable API for notification and mark them as invisble so that no API's are exposed and this become event driven microservice
+4. Go to integrations tab and add the request for sending sms / email
+5. Manual coding will be required in service layer that invokes twillio services, respoitory call can be added / removed as per business requirement.
+and in event consumer layer that receives delivery event and invokes create notification
+
+
+### Twillio Service
+
+Twillio is a third party service
+
+1. You need to sign up and get credentials
+2. Notification service will use twillio credentials
+
+Note : radical does not allow storage of credentials in properties or any repository files by design
+
+
+<div id="tastySmiley" >
+😋
+</div>

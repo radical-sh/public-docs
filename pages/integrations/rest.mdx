@@ -1,0 +1,31 @@
+# Rest 
+
+Rest requests allows API's to connect to other systems, that was built via radical or existing services or any REST end point. 
+
+Example :
+
+Let's send a SMS via Twillio API, 
+
+Curl request from twillio documentation
+```
+curl -X POST "https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json" \
+--data-urlencode "Body=This will be the body of the new message" \
+--data-urlencode "From=+15017122661" \
+--data-urlencode "To=+15558675310" \
+-u $TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN
+```
+
+Steps to create this request
+1. Enter request name as SendMessage
+2. Select default group / your group settings icon and base url to be changed as https://api.twilio.com/
+3. Twillio uses basic authentication, set authentication type as basic. This will generate environmental variables which can be modified in .env files
+`DEFAULT_SERVICE_AUTH_USERNAME`
+`DEFAULT_SERVICE_AUTH_PASSWORD`
+4. ::TODO:: Form encoding should be at field level, this needs to be updated after code change
+
+# Rest group
+
+Rest group is a collection of rest requests that have a common base url and authentication.
+
+
+For example if a microservice is connecting to twillio for sending sms and email and also connects to salesforce for CRM. Then requests groups can be created for twillio and salesforce.
