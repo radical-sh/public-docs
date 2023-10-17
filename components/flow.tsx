@@ -80,7 +80,7 @@ const initialNodes = [
     { id: '3', type: 'textUpdater', position: { x: 300, y: 150 }, data: { inputPosition: "left", outputPosition: "right", label: 'Notification Service' } },
     { id: '4', type: 'output', style: { borderRadius: 20 }, position: { x: 318, y: 250 }, data: { label: 'Twillio' } },
     {
-        id: '5', type: 'personIcon', position: { x: -100, y: 0 }, data: { label: '🧑🏼‍💼👨🏼‍🍳' },
+        id: '5', type: 'personIcon', position: { x: -100, y: 0 }, data: { label: '👧🏽👨🏼‍🍳' },
     },
     {
         id: '6', type: 'personIcon', position: { x: -80, y: 150 }, data: { outputPosition: "right", img: <Image src={deliveryMan} style={{ display: 'inline' }} alt="Delivery Man" width={40} height={40} /> },
