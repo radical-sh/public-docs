@@ -2,7 +2,7 @@
 
 #### One to One
 
-Example : Student has one to one relation ship with Address
+Example : Student has one to one relationship with Address
 
 In NO-SQL address data is embedded along with student while in SQL student and adress can be stored in different tables and joined with addressId column in RDBMS
 
@@ -11,7 +11,7 @@ To replicate this relationship
 2. Create a schema for Address
 3. Create a property in student schema for address
 
-If your store selection is NO-SQL there is not need for any addressId and API can be genreated, but while choosing RDBMS 
+If your store selection is NO-SQL there is not need for any addressId and API can be genreated, but while choosing RDBMS it is needed
 
 #### One to Few
 
@@ -28,14 +28,14 @@ In No-SQL databases one to few will be considered as embedded relation, while in
 
 Example : Department has **one to many** relationship with students. One to many leads to fetch on lot of records in RDBMS and embedding approach in NO-SQL databases will lead to limitations. 
 
-Instead the preferred approach would be to have many to one relation ship from student to deparment and if any filters are required on deartment, filters can be applied on select all of students api
+Instead the preferred approach would be to have many to one relation ship from student to department and if any filters are required on department, filters can be applied on select all of students api
 
 #### Many to One
 
 
 Example : Student has **many to one** relationship with department. 
 
-While creating student schema, deparmentId can be added and deparment can be referenced as many to one relationship at schema level. These references will not need inserts / updates in API.
+While creating student schema, departmentId can be added and department can be referenced as many to one relationship at schema level. These references will not need inserts / updates in API.
 
 
 ![Many to one](../../images/manytoone.png)
