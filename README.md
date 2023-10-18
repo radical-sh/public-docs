@@ -2,15 +2,15 @@
 
 This is a documentation for [Radical](https://radical.sh).
 
-[**Live Demo →**](https://radical.sh/docs)
-
 [![](.github/screenshot.png)](https://radical.sh)
 
 ## Quick Start
 
 First, run `pnpm i` to install the dependencies.
 
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
+Then, run `pnpm dev` to start the development server and visit
+
+[**Local Preview →**](http://localhost:3000/documentation)
 
 Internal contributors can branch and contribute and raise a Pull Request.
 

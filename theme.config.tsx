@@ -122,6 +122,7 @@ const config: DocsThemeConfig = {
                 <li><a className='nav-link' href="https://radical.sh">Overview</a></li>
                 <li><a className='nav-link' href="https://radical.sh#why">Why?</a></li>
                 <li><a className='nav-link' href="https://radical.sh#features">Features</a></li>
+                <li><a className='nav-link' href="https://radical.sh#preview">Preview</a></li>
                 <li><a className='nav-link active' href="#">Documentation</a></li>
                 {/* <li id="search">
               {d({})}
